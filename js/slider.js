@@ -12,7 +12,7 @@ var slider = (function(){
 
 			e.preventDefault();
 			switchPicture( $("a").index( $(this) ) );
-			switchSumbNext();
+			switchSumb();
 			switchClasses();
 
 		});
@@ -24,14 +24,14 @@ var slider = (function(){
 			if ( $(this).hasClass("next") ) {
 				currentSlidePosition++;
 				switchPicture(currentSlidePosition);
-				switchSumbNext();
+				switchSumb();
 				switchClasses();
 			}
 
 			if ( $(this).hasClass("prev") ) {
 				currentSlidePosition--;
 				switchPicture(currentSlidePosition);
-				switchSumbPrev();
+				switchSumb();
 				switchClasses();
 			}
 
@@ -44,18 +44,8 @@ var slider = (function(){
 			
 		}
 
-		function switchSumbNext() {
+		function switchSumb() {
 			$("#pictures_sumbnails ul").css("margin-left", -150 * (currentSlidePosition - 1));
-		}
-
-		function switchSumbPrev() {
-
-			//if (currentSlidePosition == 0) {
-				//$("#pictures_sumbnails ul").css("margin-left", 150);
-			//} else {
-				$("#pictures_sumbnails ul").css("margin-left", -150 * (currentSlidePosition - 1));
-			//}
-
 		}
 
 		function switchClasses() {
